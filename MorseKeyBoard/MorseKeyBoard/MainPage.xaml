@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MorseKeyBoard.MainPage">
+
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="120" />
+            <!-- Height adjusted for buttons -->
+            <RowDefinition Height="120" />
+            <!-- Additional row for the "Space" button -->
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" BackgroundColor="#2196F3" Padding="24" CornerRadius="0" VerticalOptions="Start">
+            <Label Text="Welcome to Morse Code Writer" FontSize="Large" HorizontalOptions="Center" TextColor="White" />
+        </Frame>
+
+        <!-- Labels centered in the page -->
+        <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+
+            <Button Grid.Row="3" Text="Space"
+                    Rotation="180"
+                FontSize="Large"
+                HeightRequest="120"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnSpaceClicked"
+                />
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                <Button Text="-"
+                    FontSize="Large"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    CornerRadius="60"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="OnDashClicked"
+                    />
+                <Button Text="."
+                    FontSize="Large"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    CornerRadius="60"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="OnDotClicked"
+                    />
+            </StackLayout>
+            <StackLayout Rotation="180" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+
+                <Button Text="Backspace" FontSize="Large" Clicked="OnBackspaceClicked" />
+                <Button Text="Clear Text" FontSize="Large" Clicked="OnClearTextClicked" />
+            </StackLayout>
+            
+            <Label x:Name="textOutput2"
+                   Text=""
+                   FontSize="Medium"
+                   Rotation="180"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Label x:Name="morseCodeOutput2"
+                   Text="Morse Code Output"
+                   FontSize="Medium"
+                   Rotation="180"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+
+            <Label x:Name="morseCodeOutput"
+                   Text="Morse Code Output"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Label x:Name="textOutput"
+                   Text=""
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+
+                <Button Text="Backspace" FontSize="Large" Clicked="OnBackspaceClicked" />
+                <Button Text="Clear Text" FontSize="Large" Clicked="OnClearTextClicked" />
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Button Text="."
+                    FontSize="Large"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    CornerRadius="60"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="OnDotClicked"
+                    />
+            <Button Text="-"
+                    FontSize="Large"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    CornerRadius="60"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="OnDashClicked"
+                    />
+        </StackLayout>
+        
+        
+
+        <Button Grid.Row="3" Text="Space"
+                FontSize="Large"
+                HeightRequest="120"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnSpaceClicked"
+                />
+    </Grid>
+
+</ContentPage>
